@@ -1,0 +1,83 @@
+
+<header>
+  <app-navbar></app-navbar>
+</header>
+
+<div class="big-mommy-div">
+
+
+    <div class="coll-div-main">
+
+    <div class="coll-div-child-for-content">
+        <h1 class="coll-h1-title">Shop</h1>
+
+        <div class="div-for-items">
+
+          <div class="div-for-fillters">
+            
+ <div>
+        <label class="st-for-labels">Price Filter:</label>
+        <input type="number" placeholder="Min Price" [(ngModel)]="minPriceFilter" (input)="applyFilters()">
+        <input type="number" placeholder="Max Price" [(ngModel)]="maxPriceFilter" (input)="applyFilters()">
+   </div>
+            
+  
+  <div>
+    <label class="st-for-labels">Gender Filter:</label>
+    <select [(ngModel)]="genderFilter" (change)="applyFilters()">
+      <option value="">All</option>
+      <option value="men">Men</option>
+      <option value="women">Women</option>
+    </select>
+  </div>
+  
+  <div>
+    <label class="st-for-labels">Shoe Type Filter:</label>
+    <select [(ngModel)]="typeFilter" (change)="applyFilters()">
+      <option value="">All</option>
+      <option value="running">Running</option>
+      <option value="sneaker">Sneaker</option>
+      <option value="training">Training</option>
+    </select>
+  </div>
+  
+  <div class="div-for-erorr-st1" *ngIf="filteredShoes.length === 0">
+    <p class="erorr-p-st1">No shoes found. <br> 404</p>
+  </div>
+
+
+</div>
+
+  
+  <div *ngFor="let shoe of filteredShoes">
+    
+    <div class="items-div-main">
+      <a [routerLink]="['/shoe', shoe.name]">
+        <img class="st-for-img" [src]="shoe.image" alt="{{ shoe.name }}">
+    <p class="img-p-name">{{ shoe.name }}</p>
+    <p class="img-p-price">${{ shoe.price }}</p>
+    <span class="span-stars-st2">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
+
+  </a>
+  </div>
+
+  </div>
+  
+
+        </div>
+    </div>
+       
+           
+    </div>
+
+
+
+
+</div>
+
+
+
+
+<footer>
+  <app-footer></app-footer>
+ </footer>

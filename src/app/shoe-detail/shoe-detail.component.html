@@ -1,0 +1,24 @@
+
+<header>
+  <app-navbar></app-navbar>
+</header>
+
+<div class="div-for-details">
+<div class="mini-for-details" *ngIf="shoe">
+    <img class="st-for-img" [src]="shoe.image" alt="{{ shoe.name }}">
+<div class="div-for-info">
+  <h2>{{ shoe.name }}</h2>
+    <p class="st-for-p">Price: ${{ shoe.price }} <span>& Free Shipping</span></p>
+    <p>Gender: {{ shoe.gender }}</p>
+    <p>Type: {{ shoe.type }}</p>
+    <button (click)="goBack()">Back</button>
+    <button class="st-btn-2">Buy Now</button>
+  </div>
+  </div>
+
+</div>
+  
+
+<footer>
+  <app-footer></app-footer>
+ </footer>

@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<nav class="navbar">
+  <div class="navbar-brand">
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="scrollToTop()">PLASHOE</a>
+  </div>
+  <div class="navbar-menu"   [ngClass]="{'active': isMenuActive}">
+    <a routerLink="/collection" routerLinkActive="active">COLLECTION</a>
+    <a href="#">LOOKBOOK</a>
+    <a href="#">SALE</a>
+  </div>
+
+  <div class="div-for-navbar-icons-end">
+  <div class="navbar-end" [ngClass]="{'active': isMenuActive}">
+    <a href="#">OUR STORY</a>
+    <a href="#">CONTACT</a>
+  </div>
+
+  <div class="navbar-icons icons-navbar-st1">
+    <a href="#"><i class="fa-solid fa-bag-shopping icons-st1-navbar" style="color: #000000;"></i><span class="badge">0</span></a>
+    <i class="fa-solid fa-user icons-st1-navbar" style="color: #000000;"></i><a href="#"></a>
+  </div>
+</div>
+  <div class="navbar-toggle" (click)="toggleMenu()">
+    <span>&#9776;</span>
+  </div>
+</nav>

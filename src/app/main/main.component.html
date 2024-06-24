@@ -1,0 +1,241 @@
+
+<header>
+  <app-navbar></app-navbar>
+</header>
+
+
+
+<div class="big-div">
+
+  <div class="div-main">
+    <div class="main-div-img">
+
+      <img [src]="imageUrl" alt="Description of image">
+
+      <div class="overlay">
+        <h1 class="img-text-h1">Love the Planet <br> we walk on</h1>  
+        <p class="img-text-p">Bibendum fermentum, aenean donec pretium aliquam blandit <br> tempor imperdiet arcu arcu ut nunc in dictum mauris at ut.</p>
+         
+        <div class="div-img-buttons">
+          <button class="img-button-st1"><a routerLink="/collection">SHOP MEN</a></button>
+          <button class="img-button-st1 img-button-st2"><a routerLink="/collection">SHOP WOMEN</a></button>
+        </div>
+      </div>
+
+    </div>
+
+    
+    <div class="div-part-img">
+      <p class="part-p-st1">As seen in:</p>
+      <div *ngFor="let logo of logoImages">
+        <img [src]="logo" alt="Logo">
+      </div>
+    </div>
+
+    <div class="div-about-us">
+      <img [src]="aboutUs" alt="">
+
+      <div class="div-for-text-abut">
+        
+      </div>
+      <div class="about-div-content">
+      <p class="about-st-p">About Us</p>
+      <h1>Selected materials <br>designed for comfort <br>and sustainability</h1>
+       <p class="about-st-p2">Nullam auctor faucibus ridiculus dignissim sed et <br> auctor sed eget auctor nec sed elit nunc,  magna non <br> urna amet ac neque ut quam enim pretium risus <br> gravida  ullamcorper adipiscing at ut magna.</p>
+       <button  class="about-st-btn">READ MORE</button>
+    </div>
+    
+  </div>
+
+
+
+  <div class="div-shoes-req">
+
+<div class="div-for-head-text">
+    <h1>See how your shoes are made </h1>
+    <p class="st-for-p-req">Urna, felis enim orci accumsan urna blandit egestas mattis egestas feugiat viverra ornare donec adipiscing semper aliquet integer risus leo volutpat nulla enim ultrices</p>
+  </div>
+
+
+    <div class="div-shoes-req-mini">
+
+  <div class="div-p-div-1">
+      <div class="div-req-text div-req-text-border">
+        <span class="st-for-req-span">01.</span>
+        <h4>Pet canvas</h4>
+        <p class="req-p-mini-st">Morbi eget bibendum sit adipiscing morbi ac nisl vitae maecenas nulla cursus</p>
+      </div>
+
+      <div class="div-req-text">
+        <span class="st-for-req-span">02.</span>
+        <h4>Algae foam + vegan glue</h4>
+        <p class="req-p-mini-st">Enim tincidunt donec vulputate magna pharetra mattis in</p>
+      </div>
+
+    </div>
+
+
+
+    <img class="req-img-st" [src]="reqUrl" alt="shoe-img">
+
+
+    <div class="div-p-div-1">
+      <div class="div-req-text2 div-req-text-border">
+        <span class="st-for-req-span">03.</span>
+        <h4>Organic cotton</h4>
+        <p  class="req-p-mini-st">A vel ipsum, sed dignissim elementum ultrices amet </p>
+      </div>
+
+      <div class="div-req-text2">
+        <span class="st-for-req-span">04.</span>
+        <h4>Upcycled plastic bottles</h4>
+        <p class="req-p-mini-st">Pellentesque viverra amet netus facilisis amet felis odio tortor orci cursus est</p>
+      </div>
+
+    </div>
+    
+  </div>
+
+</div>
+
+
+<div class="div-best-seller">
+
+  <h4>Our Best Seller</h4>
+
+  
+  <div class="shoe-list div-for-best-shoe">
+    <div *ngFor="let shoe of shoes" class="shoe-item">
+      <img class="best-shoe-st" [src]="shoe.imageUrl" alt="{{ shoe.name }}">
+      <h5 class="best-shoe-name-st">{{ shoe.name }}</h5>
+      <div class="div-for-price-old-new">
+      <span *ngIf="shoe.oldPriceHTML" class="old-price" [innerHTML]="shoe.oldPriceHTML"></span>
+      <p class="st-for-price-bestseller">${{ shoe.price }}</p>
+
+    </div>
+      <span class="st-for-stars" *ngFor="let star of [1, 2, 3, 4, 5]" [class.filled]="star <= shoe.rating">&#9733;</span>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+<div class="div-for-2-backgrounds">
+  
+  <div class="div-man-page-st-1">
+    <img class="req-img-st" [src]="backgroundImgmen" >
+
+<div class="div-for-h1-btn-ontop">    
+    <h1>Men</h1>
+    <button class="for-btn-ontop-the-img"><a routerLink="/collection">SHOP MEN</a></button>
+</div>
+
+  </div>
+
+  <div class="div-man-page-st-1">
+    <img class="req-img-st" [src]="backgroundImgwomen" >
+
+<div class="div-for-h1-btn-ontop">    
+    <h1>Women</h1>
+    <button  class="for-btn-ontop-the-img"> <a routerLink="/collection">SHOP WOMEN</a></button>
+</div>
+
+  </div>
+
+
+</div>
+
+
+
+
+
+
+<div class="div-reco">
+
+<div class="div-mini-reco">
+  <p class="reco-p-st">Eu eget felis erat mauris aliquam mattis lacus, arcu leo aliquam sapien pulvinar laoreet vulputate sem aliquet phasellus egestas felis, est, vulputate morbi massa mauris vestibulum dui odio.</p>
+  
+  <img class="reco-img-st" [src]="recoOne" >
+  <img class="reco-img-st" [src]="recoTwo" >
+  <img class="reco-img-st" [src]="recoThree" >
+</div>
+
+<img class="reco-circle-img" [src]="recoCricle" >
+
+</div>
+
+
+
+<div class="div-info-all">
+  
+  <div class="div-info-st1">
+
+    <h5 class="img-h5-info-st1">
+      <img [src]="lockUrl" alt="">
+      Secure Payment</h5>
+
+    </div>
+
+  <div class="div-info-st1">
+    <h5 class="img-h5-info-st1">
+      <img [src]="shippingUrl" alt="">
+      Express Shipping
+    </h5>
+
+  </div>
+
+  <div class="div-info-st1">
+    <h5 class="img-h5-info-st1">
+      <img [src]="returnUrl" alt="">
+      Free Return
+    </h5>
+
+  </div>
+
+</div>
+
+
+
+<div class="div-custom">
+
+  <div class="div-for-h1-custom">
+    <h1>Our Customers speak for us</h1>
+  </div>
+
+  <div class="div-for-custom-3">
+  <div class="div-custom-mini">
+    <span class="span-stars-st1">&#9733; &#9733; &#9733; &#9733;</span>
+    <p  class="customer-p-st1">“Felis semper duis massa scelerisque ac amet porttitor ac tellus venenatis aliquam varius mauris integer”</p>
+    <span class="customer-span-st-1"> <img class="customer-img-st1" [src]="customer1" alt="">  JULIA KEYS</span>
+  </div>
+
+  
+  <div class="div-custom-mini">
+    <span class="span-stars-st1">&#9733; &#9733; &#9733; &#9733;</span>
+    <p class="customer-p-st1">“Non malesuada fringilla non varius odio in id pellentesque aliquam volutpat sapien faucibus ”</p>
+    <span class="customer-span-st-1"> <img class="customer-img-st1" [src]="customer2" alt="">  LUIS ADRIAN</span>
+  </div>
+
+  
+  <div class="div-custom-mini">
+    <span class="span-stars-st1">&#9733; &#9733; &#9733; &#9733;</span>
+    <p class="customer-p-st1">“Tortor suspendisse tincidunt accumsan platea pellentesque hac.”</p>
+<span class="customer-span-st-1"> <img class="customer-img-st1" [src]="customer3" alt="">  MARIA ANNA</span>
+  </div>
+</div>
+
+</div>
+
+
+
+</div>
+
+</div>
+
+
+
+<footer>
+  <app-footer></app-footer>
+ </footer>
